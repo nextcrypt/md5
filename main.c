@@ -1,6 +1,6 @@
 /**
-* MD5 algorithm implementation
-* twitter => @tal7aouy 
+* MD5 hash implementation
+* twitter => @tal7aouy
 * github => @tal7aouy
 */
 #include <stdlib.h>
@@ -49,7 +49,7 @@ unsigned rol( unsigned v, short amt )
     return ((v>>(32-amt)) & msk1) | ((v<<amt) & ~msk1);
 }
 
-unsigned *md5( const char *msg, int mlen) 
+unsigned *md5( const char *msg, int mlen)
 {
     static Digest h0 = { 0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476 };
 //    static Digest h0 = { 0x01234567, 0x89ABCDEF, 0xFEDCBA98, 0x76543210 };
@@ -86,7 +86,7 @@ unsigned *md5( const char *msg, int mlen)
         grps  = 1 + (mlen+8)/64;
         msg2 = malloc( 64*grps);
         memcpy( msg2, msg, mlen);
-        msg2[mlen] = (unsigned char)0x80;  
+        msg2[mlen] = (unsigned char)0x80;
         q = mlen + 1;
         while (q < 64*grps){ msg2[q] = 0; q++ ; }
         {
@@ -127,7 +127,7 @@ unsigned *md5( const char *msg, int mlen)
         free( msg2 );
 
     return h;
-}    
+}
 
 int main( int argc, char *argv[] )
 {
