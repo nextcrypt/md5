@@ -1,0 +1,24 @@
+# Define the root of the configuration
+root = true
+
+[*]
+# End-of-line character
+end_of_line = lf
+# Character encoding
+charset = utf-8
+# Should files end with a newline
+insert_final_newline = true
+# Indentation style (space or tab)
+indent_style = space
+# Number of spaces per indentation level
+indent_size = 4
+# File format (text or binary)
+trim_trailing_whitespace = true
+
+# Specific settings for C files
+[*.c]
+# These settings apply to C source files
+
+# Specific settings for C header files
+[*.h]
+# These settings apply to C header files
